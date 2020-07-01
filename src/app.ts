@@ -8,7 +8,8 @@ export async function start(){
     const app = express();
     const server = new ApolloServer({
         schema: await buildSchema({
-            resolvers: [PersonaResolver]
+            resolvers: [PersonaResolver],
+            validate: false
         }),
         context: ({req, res}) => ({req, res})
     })
