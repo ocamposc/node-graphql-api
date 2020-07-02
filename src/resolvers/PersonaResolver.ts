@@ -1,7 +1,5 @@
 import { Query, Resolver, Mutation, Arg, Field, InputType, Int } from 'type-graphql'
-
 import { Personas } from '../entity/Persona'
-
 
 @InputType()
 class PersonaInput {
@@ -17,6 +15,7 @@ class PersonaInput {
     @Field()
     email!: string;
 }
+
 @InputType()
 class PersonaUpdateInput {
     @Field(() => String, {nullable: true})
@@ -31,7 +30,6 @@ class PersonaUpdateInput {
     @Field(() => String, {nullable: true})
     email?: string;
 }
-
 
 @Resolver()
 export class PersonaResolver {
